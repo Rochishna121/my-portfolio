@@ -1,91 +1,104 @@
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaCloud, FaDocker } from "react-icons/fa";
+
 export default function App() {
   return (
-    <div className="bg-gray-50 text-gray-800 scroll-smooth">
+    <div className="bg-gray-50 text-gray-900 font-sans">
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full bg-white shadow z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <h1 className="font-bold text-xl">Rochishna</h1>
-
-          <div className="flex space-x-6">
-            <a href="#about" className="hover:text-blue-500">About</a>
-            <a href="#education" className="hover:text-blue-500">Education</a>
-            <a href="#skills" className="hover:text-blue-500">Skills</a>
-            <a href="#projects" className="hover:text-blue-500">Projects</a>
-            <a href="#contact" className="hover:text-blue-500">Contact</a>
+      <nav className="fixed top-0 w-full bg-white shadow-md z-50">
+        <div className="max-w-6xl mx-auto flex justify-between p-4">
+          <h1 className="font-bold text-lg">Rochishna</h1>
+          <div className="space-x-6">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
           </div>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center pt-20">
-        <h1 className="text-5xl font-bold">Pillarisetty Venkata Rochishna</h1>
-        <p className="text-xl mt-3 text-gray-600">Cloud Engineer</p>
+      <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-100 to-purple-100">
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-5xl font-bold"
+        >
+          Pillarisetty Venkata Rochishna
+        </motion.h1>
+
+        <p className="text-xl mt-4">Cloud Engineer</p>
 
         <a
           href="/resume.pdf"
-          className="mt-6 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700"
         >
           Download Resume
         </a>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-20 px-10 bg-white">
-        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+      <section id="about" className="max-w-5xl mx-auto py-20 px-4">
+        <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p>
-          I am a Cloud Engineering student at KL University passionate about
-          cloud computing, DevOps, and scalable systems. I enjoy building
-          modern applications and learning new technologies.
+          Cloud Engineering student at KL University passionate about AWS, DevOps,
+          Kubernetes, and scalable cloud systems.
         </p>
       </section>
 
-      {/* EDUCATION */}
-      <section id="education" className="py-20 px-10">
-        <h2 className="text-3xl font-semibold mb-4">Education</h2>
-        <div className="bg-white shadow-md p-5 rounded-xl">
-          B.Tech — KL University
-        </div>
-      </section>
-
       {/* SKILLS */}
-      <section id="skills" className="py-20 px-10 bg-white">
-        <h2 className="text-3xl font-semibold mb-6">Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="bg-gray-100 p-4 rounded">Cloud Computing</div>
-          <div className="bg-gray-100 p-4 rounded">AWS / Azure</div>
-          <div className="bg-gray-100 p-4 rounded">Docker</div>
-          <div className="bg-gray-100 p-4 rounded">Kubernetes</div>
-          <div className="bg-gray-100 p-4 rounded">DevOps</div>
-          <div className="bg-gray-100 p-4 rounded">Linux</div>
+      <section id="skills" className="bg-gray-100 py-20">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Skills</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="bg-white p-6 rounded-lg shadow">
+              <FaCloud size={40} className="mx-auto mb-2" />
+              Cloud
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <FaDocker size={40} className="mx-auto mb-2" />
+              Docker
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">AWS / Azure</div>
+            <div className="bg-white p-6 rounded-lg shadow">Kubernetes</div>
+          </div>
         </div>
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="py-20 px-10">
-        <h2 className="text-3xl font-semibold mb-6">Projects</h2>
+      <section id="projects" className="max-w-5xl mx-auto py-20 px-4">
+        <h2 className="text-3xl font-bold mb-8">Projects</h2>
 
-        <div className="bg-white shadow p-5 rounded-xl mb-4">
-          <h3 className="font-bold">Cloud Deployment Project</h3>
-          <p>Deployed scalable app using AWS + Docker + CI/CD pipeline.</p>
-        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg">
+            <h3 className="font-bold text-lg">Cloud Deployment</h3>
+            <p>Deployed scalable app using AWS, Docker, CI/CD.</p>
+          </div>
 
-        <div className="bg-white shadow p-5 rounded-xl">
-          <h3 className="font-bold">DevOps Automation</h3>
-          <p>Built CI/CD pipeline using GitHub Actions and Docker.</p>
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg">
+            <h3 className="font-bold text-lg">DevOps Automation</h3>
+            <p>Built CI/CD pipeline using GitHub Actions and Docker.</p>
+          </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-20 px-10 bg-white">
-        <h2 className="text-3xl font-semibold mb-4">Contact</h2>
-        <p>Email: yourmail@gmail.com</p>
-        <p>LinkedIn: linkedin.com/in/yourprofile</p>
-      </section>
+      <section id="contact" className="bg-gray-100 py-20 text-center">
+        <h2 className="text-3xl font-bold mb-4">Contact</h2>
 
-      <footer className="text-center py-5 text-gray-500">
-        © 2026 Pillarisetty Venkata Rochishna
-      </footer>
+        <div className="flex justify-center gap-6 text-2xl">
+          <a href="https://github.com/Rochishna121">
+            <FaGithub />
+          </a>
+          <a href="https://linkedin.com/in/yourprofile">
+            <FaLinkedin />
+          </a>
+        </div>
+
+        <p className="mt-4">rochishna@gmail.com</p>
+      </section>
 
     </div>
   );
