@@ -99,7 +99,7 @@ export default function App() {
           </a>
         </div>
 
-        <p className="mt-4">rochishna@gmail.com</p>
+        <p className="mt-4">pillarisettyvenkatarochishna@gmail.com</p>
       </section>
 
     </div>
