@@ -30,8 +30,10 @@ export default function App() {
 
         <p className="text-xl mt-4">Cloud Engineer</p>
 
+        {/* DOWNLOAD RESUME (FORCE DOWNLOAD) */}
         <a
           href="/resume.pdf"
+          download
           className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700"
         >
           Download Resume
@@ -89,10 +91,10 @@ export default function App() {
         <h2 className="text-3xl font-bold mb-4">Contact</h2>
 
         <div className="flex justify-center gap-6 text-2xl">
-          <a href="https://github.com/Rochishna121">
+          <a href="https://github.com/Rochishna121" target="_blank" rel="noreferrer">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourprofile">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
             <FaLinkedin />
           </a>
         </div>
