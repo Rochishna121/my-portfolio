@@ -2,11 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-portfolio</title>
+    <meta name="description" content="Cloud Engineer portfolio - AWS, DevOps, Kubernetes expertise. Explore projects and connect on LinkedIn/GitHub." />
+    <meta name="keywords" content="Cloud Engineer, AWS, DevOps, Kubernetes, Docker, CI/CD" />
+    <meta name="author" content="Pillarisetty Venkata Rochishna" />
+    <meta property="og:title" content="Rochishna - Cloud Engineer Portfolio" />
+    <meta property="og:description" content="Explore cloud engineering projects and expertise" />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Sans & Google Sans Code Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>Rochishna - Cloud Engineer | Portfolio</title>
+    <script>
+      // Initialize theme before React renders to prevent flash
+      const theme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = theme ? theme === 'dark' : prefersDark;
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
-  <body>
+  <body class="font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
