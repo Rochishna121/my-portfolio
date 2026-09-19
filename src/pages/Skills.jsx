@@ -68,7 +68,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="pt-32 pb-20 px-6 min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+    <section id="skills" className="pt-32 pb-20 px-6 min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 soft-grid-bg">
       <div className="max-w-5xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function Skills() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-semibold mb-4"
+            className="section-kicker bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 mb-4"
           >
             My expertise
           </motion.span>
@@ -100,7 +100,8 @@ export default function Skills() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="card-hover bg-white dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-purple-400 dark:hover:border-purple-600"
+              whileHover={{ y: -6 }}
+              className="elevated-card bg-white/90 dark:bg-gray-800/90 p-8 rounded-2xl hover:border-purple-400 dark:hover:border-purple-600"
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
@@ -111,7 +112,7 @@ export default function Skills() {
               <p className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">{skill.name}</p>
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{skill.description}</p>
               
-              <div className="flex gap-1">
+              <div className="flex gap-1 mb-3">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <FaStar
                     key={i}
@@ -119,6 +120,16 @@ export default function Skills() {
                     className={i < skill.level ? "text-yellow-400" : "text-gray-300 dark:text-gray-600"}
                   />
                 ))}
+              </div>
+
+              <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${(skill.level / 5) * 100}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.1 }}
+                  className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                />
               </div>
             </motion.div>
           ))}
