@@ -4,8 +4,8 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 export default function Projects() {
   const projects = [
     {
-      title: "Rubix Cube Solver",
-      description: "Interactive Rubix cube solver that computes solution steps with algorithmic search",
+      title: "Rubik's Cube Solver",
+      description: "Interactive Rubik's Cube solver that computes solution steps with algorithmic search",
       technologies: ["JavaScript", "Algorithms", "React"],
       github: "https://github.com/rochishna2005/project1/tree/main/rubiks-solver-app",
       live: "http://rochishna-cube-solver.surge.sh/",
